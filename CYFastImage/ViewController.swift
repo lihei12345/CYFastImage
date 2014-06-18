@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
+    
+    @IBOutlet var imageView_: UIImageView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        imageView_.setImageURL("", placeHolderImage: UIImage(named: "125.jpg"));
     }
 
     override func didReceiveMemoryWarning() {

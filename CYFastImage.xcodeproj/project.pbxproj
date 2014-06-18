@@ -12,6 +12,8 @@
 		965AC1531950609900DA04B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965AC1511950609900DA04B3 /* Main.storyboard */; };
 		965AC1551950609900DA04B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965AC1541950609900DA04B3 /* Images.xcassets */; };
 		965AC1611950609900DA04B3 /* CYFastImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC1601950609900DA04B3 /* CYFastImageTests.swift */; };
+		96ACABCA19507075007226BB /* 125.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96ACABC919507074007226BB /* 125.jpg */; };
+		96ACABCD1950715A007226BB /* UIImageView+FastImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ACABCC1950715A007226BB /* UIImageView+FastImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		965AC15A1950609900DA04B3 /* CYFastImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CYFastImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		965AC15F1950609900DA04B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		965AC1601950609900DA04B3 /* CYFastImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYFastImageTests.swift; sourceTree = "<group>"; };
+		96ACABC919507074007226BB /* 125.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 125.jpg; sourceTree = "<group>"; };
+		96ACABCC1950715A007226BB /* UIImageView+FastImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FastImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 				965AC14D1950609900DA04B3 /* AppDelegate.swift */,
 				965AC14F1950609900DA04B3 /* ViewController.swift */,
 				965AC1511950609900DA04B3 /* Main.storyboard */,
+				96ACABCB19507134007226BB /* CYFastImage */,
 				965AC1541950609900DA04B3 /* Images.xcassets */,
 				965AC14B1950609900DA04B3 /* Supporting Files */,
 			);
@@ -87,6 +92,7 @@
 		965AC14B1950609900DA04B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96ACABC919507074007226BB /* 125.jpg */,
 				965AC14C1950609900DA04B3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -107,6 +113,14 @@
 				965AC15F1950609900DA04B3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96ACABCB19507134007226BB /* CYFastImage */ = {
+			isa = PBXGroup;
+			children = (
+				96ACABCC1950715A007226BB /* UIImageView+FastImage.swift */,
+			);
+			path = CYFastImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ACABCA19507075007226BB /* 125.jpg in Resources */,
 				965AC1531950609900DA04B3 /* Main.storyboard in Resources */,
 				965AC1551950609900DA04B3 /* Images.xcassets in Resources */,
 			);
@@ -209,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				965AC1501950609900DA04B3 /* ViewController.swift in Sources */,
+				96ACABCD1950715A007226BB /* UIImageView+FastImage.swift in Sources */,
 				965AC14E1950609900DA04B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +413,7 @@
 				965AC1661950609900DA04B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		965AC1671950609900DA04B3 /* Build configuration list for PBXNativeTarget "CYFastImageTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +422,7 @@
 				965AC1691950609900DA04B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
