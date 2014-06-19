@@ -3,7 +3,7 @@
 //  CYFastImage
 //
 //  Created by jason on 14-6-17.
-//  Copyright (c) 2014年 chenyang. All rights reserved.
+//  Copyright (c) 2014 chenyang. All rights reserved.
 //
 
 import Foundation
@@ -18,5 +18,15 @@ extension UIImageView {
         }
         
         self.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        if let tmp = url {
+            CYFastImage.sharedImageDownloader.downloadImage(tmp){
+                (image:UIImage?) -> Void in
+                if let newImage = image {
+                    self.image = newImage
+                    self.contentMode = UIViewContentMode.ScaleAspectFit
+                }
+            }
+        }
     }
 }
