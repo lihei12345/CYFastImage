@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         imageView_.backgroundColor = UIColor.redColor()
         // Do any additional setup after loading the view, typically from a nib.
         imageView_.setImageURL("http://b.hiphotos.baidu.com/image/pic/item/267f9e2f070828385ee83f10ba99a9014d08f1c9.jpg", placeHolderImage: UIImage(named: "125.jpg"));
+        imageView_.contentMode = UIViewContentMode.ScaleAspectFit
     }
 
     override func didReceiveMemoryWarning() {

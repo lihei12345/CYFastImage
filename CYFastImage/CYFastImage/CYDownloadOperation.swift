@@ -9,11 +9,13 @@
 import UIKit
 
 extension CYFastImage{
+    typealias DownloadCallback = (image: UIImage!, urlString: String!) -> Void
+    
     class CYDownloadOperation: NSOperation , NSURLConnectionDataDelegate, NSURLConnectionDelegate{
         var urlConnection: NSURLConnection!
-        var urlString: NSString?
+        var urlString: NSString!
         var data: NSMutableData?
-        var finishCallback: (UIImage? -> Void)?
+        var finishCallback: DownloadCallback?
         var mExecuting: Bool
         var mFinished: Bool
         
@@ -33,6 +35,13 @@ extension CYFastImage{
             self.executing = false
             self.finished = true
             self.data = nil
+            self.urlConnection = nil
+        }
+        
+        func internalCancel() {
+            urlConnection.cancel()
+            self.done()
+            super.cancel()
         }
         
         // MARK: NSOperation
@@ -56,6 +65,16 @@ extension CYFastImage{
                 var request: NSURLRequest = NSURLRequest(URL: aURL)
                 urlConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)
                 urlConnection.start()
+            }
+        }
+        
+        override func cancel() {
+            if NSThread.isMainThread() {
+                self.internalCancel()
+            } else {
+                dispatch_async(dispatch_get_main_queue()){
+                    self.internalCancel()
+                }
             }
         }
         
@@ -94,7 +113,7 @@ extension CYFastImage{
         func connectionDidFinishLoading(connection: NSURLConnection!) {
             var image: UIImage = UIImage(data: self.data)
             if let callback = self.finishCallback {
-                callback(image)
+                callback(image: image, urlString: urlString)
             }
             
             self.done()
@@ -102,7 +121,7 @@ extension CYFastImage{
         
         func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
             if let callback = self.finishCallback {
-                callback(nil)
+                callback(image: nil, urlString: urlString)
             }
             
             self.done()

@@ -10,21 +10,24 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    func setImageURL(url: NSString?, placeHolderImage: UIImage?) {
-        if let tmpImage = placeHolderImage {
-            self.image = tmpImage
+    
+    func setImageURL(url: NSString!, placeHolderImage: UIImage!) {
+        if placeHolderImage {
+            self.image = placeHolderImage
         } else {
             self.image = nil
         }
         
-        self.contentMode = UIViewContentMode.ScaleAspectFit
         
-        if let tmp = url {
-            CYFastImage.sharedImageDownloader.downloadImage(tmp){
-                (image:UIImage?) -> Void in
-                if let newImage = image {
-                    self.image = newImage
-                    self.contentMode = UIViewContentMode.ScaleAspectFit
+        if url {
+            CYFastImage.sharedImageDownloader.downloadImage(url){
+                [weak self]
+                (image:UIImage!, urlString: String!) -> Void in
+                if image {
+                    if self {
+                        self!.image = image
+                        self!.setNeedsLayout()
+                    }
                 }
             }
         }

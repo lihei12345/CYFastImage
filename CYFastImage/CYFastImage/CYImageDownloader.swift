@@ -1,5 +1,5 @@
 //
-//  CYFastImage.swift
+//  CYImageDownloader.swift
 //  CYFastImage
 //
 //  Created by jason on 14-6-19.
@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-struct CYFastImage{
-    static var sharedImageDownloader = CYImageDownloader()
-    
+extension CYFastImage {
     class CYImageDownloader {
         var operationQueue: NSOperationQueue!
         init() {
@@ -19,11 +17,21 @@ struct CYFastImage{
             operationQueue.maxConcurrentOperationCount = 5
         }
         
-        func downloadImage(url: String, callback: (UIImage? -> Void)) {
+        func downloadImage(url: String, callback: DownloadCallback) {
             var operation = CYDownloadOperation()
             operation.urlString = url
             operation.finishCallback = callback
             operationQueue.addOperation(operation)
+        }
+        
+        func cancel(url: String!) {
+            for operation : AnyObject in operationQueue.operations {
+                if let downloadOperation =  operation as? CYDownloadOperation {
+                    if url == downloadOperation.urlString {
+                        downloadOperation.cancel()
+                    }
+                }
+            }
         }
     }
 }
