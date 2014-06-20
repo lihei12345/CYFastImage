@@ -61,6 +61,8 @@ extension CYFastImage{
         
         override func main() {
             if let url = self.urlString {
+                DEBUG_LOG("begin dowload url \(url)")
+                
                 var aURL: NSURL = NSURL(string: url)
                 var request: NSURLRequest = NSURLRequest(URL: aURL)
                 urlConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)

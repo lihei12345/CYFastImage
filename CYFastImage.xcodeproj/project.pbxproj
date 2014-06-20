@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9642D7CF195488B200EDB654 /* CYImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642D7CE195488B200EDB654 /* CYImageManager.swift */; };
 		965AC14E1950609900DA04B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC14D1950609900DA04B3 /* AppDelegate.swift */; };
 		965AC1501950609900DA04B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC14F1950609900DA04B3 /* ViewController.swift */; };
 		965AC1531950609900DA04B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965AC1511950609900DA04B3 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9642D7CE195488B200EDB654 /* CYImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYImageManager.swift; sourceTree = "<group>"; };
 		965AC1481950609900DA04B3 /* CYFastImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYFastImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965AC14C1950609900DA04B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		965AC14D1950609900DA04B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				96ACABCC1950715A007226BB /* UIImageView+FastImage.swift */,
 				9664229B1952E8A7006BABE3 /* CYFastImage.swift */,
+				9642D7CE195488B200EDB654 /* CYImageManager.swift */,
 				966422971952E449006BABE3 /* CYDownloadOperation.swift */,
 				96981F3C1953361300575B8C /* CYImageDownloader.swift */,
 				96981F3E19533CA900575B8C /* CYImageCache.swift */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96981F3F19533CA900575B8C /* CYImageCache.swift in Sources */,
+				9642D7CF195488B200EDB654 /* CYImageManager.swift in Sources */,
 				965AC1501950609900DA04B3 /* ViewController.swift in Sources */,
 				9664229C1952E8A7006BABE3 /* CYFastImage.swift in Sources */,
 				966422981952E449006BABE3 /* CYDownloadOperation.swift in Sources */,
@@ -359,6 +363,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = CYFastImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -370,6 +378,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = CYFastImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

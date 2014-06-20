@@ -17,6 +17,7 @@ extension CYFastImage {
             operationQueue.maxConcurrentOperationCount = 5
         }
         
+        // MARK: public
         func downloadImage(url: String, callback: DownloadCallback) {
             var operation = CYDownloadOperation()
             operation.urlString = url
@@ -32,6 +33,17 @@ extension CYFastImage {
                     }
                 }
             }
+        }
+        
+        func isDownloadingImage(url: String!) -> Bool {
+            for operation : AnyObject in operationQueue.operations {
+                if let downloadOperation =  operation as? CYDownloadOperation {
+                    if url == downloadOperation.urlString {
+                        return true
+                    }
+                }
+            }
+            return false
         }
     }
 }

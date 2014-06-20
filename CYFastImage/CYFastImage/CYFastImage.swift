@@ -10,35 +10,11 @@ import Foundation
 import UIKit
 
 struct CYFastImage{
-    typealias CYImageCallback = (image: UIImage!) -> Void
-    
+    static var sharedImageCache = CYImageCache()
     static var sharedImageDownloader = CYImageDownloader()
     static var sharedImageManager = CYImageManager()
-    
-    struct DownloadInfo {
-        weak var delegate: AnyObject!
-        var urlString: String!
-        var callback: CYImageCallback
-    }
-    
-    class CYImageManager {
-        var infosArray: DownloadInfo[]
-        
-        init() {
-            infosArray = DownloadInfo[]()
-        }
-        
-        func getImage(urlString: String!, delegate: AnyObject!, callback:CYImageCallback) {
-            
-        }
-        
-        func cancel(delegate: AnyObject!) {
-            
-        }
-        
-        var downloadCallback: DownloadCallback = {
-            (image: UIImage!, urlString: String!) -> Void in
-            
-        }
-    }
+}
+
+func DEBUG_LOG(format: String, args: CVarArg...) {
+    NSLog(format, args)
 }

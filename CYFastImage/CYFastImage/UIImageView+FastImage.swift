@@ -20,11 +20,13 @@ extension UIImageView {
         
         
         if url {
-            CYFastImage.sharedImageDownloader.downloadImage(url){
+            CYFastImage.sharedImageManager.cancel(self)
+            
+            CYFastImage.sharedImageManager.getImage(url, delegate: self) {
                 [weak self]
-                (image:UIImage!, urlString: String!) -> Void in
-                if image {
-                    if self {
+                (image: UIImage!, url: String!) -> Void in
+                if self {
+                    if image {
                         self!.image = image
                         self!.setNeedsLayout()
                     }
