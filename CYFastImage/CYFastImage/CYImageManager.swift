@@ -44,6 +44,7 @@ extension CYFastImage{
             if !delegate { return }
             
             var isDownloadCancel = false
+            
             infosArray = infosArray.filter(){
                 (downloadInfo: DownloadInfo) -> Bool in
                 if !downloadInfo.delegate {
@@ -55,9 +56,9 @@ extension CYFastImage{
                         CYFastImage.sharedImageDownloader.cancel(downloadInfo.urlString)
                         isDownloadCancel = true
                     }
-                    return true
+                    return false
                 }
-                return false
+                return true
             }
         }
         
@@ -72,9 +73,9 @@ extension CYFastImage{
                         CYFastImage.sharedImageDownloader.cancel(downloadInfo.urlString)
                         isDownloadCancel = true
                     }
-                    return true
+                    return false
                 }
-                return false
+                return true
             }
         }
         
@@ -91,13 +92,17 @@ extension CYFastImage{
                     if downloadInfo.callback {
                         downloadInfo.callback(image:image, url:url)
                     }
-                    return true
+                    return false
                 }
-                return false
+                return true
             }
         }
         
         func saveImage(image: UIImage!, url: String!){
+            if !image || !url {
+                return
+            }
+            
             CYFastImage.sharedImageCache.saveImage(url, image: image)
         }
         

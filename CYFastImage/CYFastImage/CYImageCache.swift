@@ -35,9 +35,6 @@ extension CYFastImage{
             }
             
             var cachepath = getcachePath(url)
-            
-            DEBUG_LOG(cachepath)
-            
             var image = UIImage(contentsOfFile: cachepath)
             callback(image: image, url: url)
         }

@@ -27,8 +27,15 @@ extension UIImageView {
                 (image: UIImage!, url: String!) -> Void in
                 if self {
                     if image {
-                        self!.image = image
-                        self!.setNeedsLayout()
+                        if NSThread.isMainThread() {
+                            self!.image = image
+                            self!.setNeedsLayout()
+                        } else {
+                            dispatch_async(dispatch_get_main_queue()){
+                                self!.image = image
+                                self!.setNeedsLayout()
+                            }
+                        }
                     }
                 }
             }

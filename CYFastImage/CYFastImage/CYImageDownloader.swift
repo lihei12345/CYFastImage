@@ -14,7 +14,7 @@ extension CYFastImage {
         var operationQueue: NSOperationQueue!
         init() {
             operationQueue = NSOperationQueue()
-            operationQueue.maxConcurrentOperationCount = 5
+            operationQueue.maxConcurrentOperationCount = 1
         }
         
         // MARK: public
