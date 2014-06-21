@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var mdataArray: Array<String> = {
         var dataArray = Array<String>()
         dataArray.append("http://g.hiphotos.baidu.com/image/pic/item/dc54564e9258d1097dec49e3d358ccbf6c814d50.jpg")
+        dataArray.append("http://g.hiphotos.baidu.com/image/pic/item/dc54564e9258d1097dec49e3d358ccbf6c814d50.jpg")
+        dataArray.append("http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409231766832f9058d109b3de4950.jpg")
         dataArray.append("http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409231766832f9058d109b3de4950.jpg")
         dataArray.append("http://a.hiphotos.baidu.com/image/pic/item/4034970a304e251f75a304a9a586c9177f3e530f.jpg")
         dataArray.append("http://h.hiphotos.baidu.com/image/pic/item/c8177f3e6709c93d97a6eea69d3df8dcd100540f.jpg")

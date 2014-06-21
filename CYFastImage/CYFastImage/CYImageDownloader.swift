@@ -12,9 +12,16 @@ import UIKit
 extension CYFastImage {
     class CYImageDownloader {
         var operationQueue: NSOperationQueue!
-        init() {
+        var concurrentCount: Int
+        
+        init(concurrentCount: Int) {
+            self.concurrentCount = concurrentCount
             operationQueue = NSOperationQueue()
-            operationQueue.maxConcurrentOperationCount = 1
+            operationQueue.maxConcurrentOperationCount = concurrentCount
+        }
+        
+        convenience init() {
+            self.init(concurrentCount: 2)
         }
         
         // MARK: public
