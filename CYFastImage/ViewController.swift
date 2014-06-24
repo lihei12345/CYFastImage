@@ -28,8 +28,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return dataArray
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    override func loadView() {
+        super.loadView()
+
+        self.title = "CYFastImage"
         
         tableView = UITableView(frame: self.view.bounds)
         tableView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
