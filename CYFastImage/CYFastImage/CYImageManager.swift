@@ -98,12 +98,12 @@ extension CYFastImage{
             }
         }
         
-        func saveImage(image: UIImage!, url: String!){
-            if !image || !url {
+        func saveImage(data: NSData!, url: String!){
+            if !data || !url {
                 return
             }
             
-            CYFastImage.sharedImageCache.saveImage(url, image: image)
+            CYFastImage.sharedImageCache.saveImage(url, data: data)
         }
         
         func beginDownload(url: String!) {
@@ -111,9 +111,10 @@ extension CYFastImage{
             if !isDownloading {
                 CYFastImage.sharedImageDownloader.downloadImage(url) {
                     [weak self]
-                    (image: UIImage!, urlString: String!) -> Void in
+                    (data: NSData!, urlString: String!) -> Void in
                     if self {
-                        self!.saveImage(image, url: urlString)
+                        var image: UIImage = UIImage(data: data)
+                        self!.saveImage(data, url: urlString)
                         self!.docallback(image, url: urlString)
                     }
                 }

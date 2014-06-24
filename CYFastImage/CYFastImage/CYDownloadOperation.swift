@@ -9,7 +9,7 @@
 import UIKit
 
 extension CYFastImage{
-    typealias DownloadCallback = (image: UIImage!, urlString: String!) -> Void
+    typealias DownloadCallback = (data: NSData!, urlString: String!) -> Void
     
     class CYDownloadOperation: NSOperation , NSURLConnectionDataDelegate, NSURLConnectionDelegate{
         var urlConnection: NSURLConnection!
@@ -118,9 +118,8 @@ extension CYFastImage{
         }
         
         func connectionDidFinishLoading(connection: NSURLConnection!) {
-            var image: UIImage = UIImage(data: self.data)
             if let callback = self.finishCallback {
-                callback(image: image, urlString: urlString)
+                callback(data: data, urlString: urlString)
             }
             
             self.done()
@@ -130,7 +129,7 @@ extension CYFastImage{
         
         func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
             if let callback = self.finishCallback {
-                callback(image: nil, urlString: urlString)
+                callback(data: nil, urlString: urlString)
             }
             
             self.done()

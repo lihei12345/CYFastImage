@@ -39,19 +39,19 @@ extension CYFastImage{
             callback(image: image, url: url)
         }
         
-        func saveImage(url: String!, image: UIImage!) {
+        func saveImage(url: String!, data: NSData!) {
             if !url {
                 return
             }
             
-            if image {
+            if data {
                 dispatch_async(cacheQueue){
                     if !self.fileManager.fileExistsAtPath(self.defaultCachePath) {
                         self.fileManager.createDirectoryAtPath(self.defaultCachePath, attributes: nil)
                     }
                     
                     var cachePath = self.getcachePath(url)
-                    self.fileManager.createFileAtPath(cachePath, contents: UIImagePNGRepresentation(image), attributes: nil)
+                    self.fileManager.createFileAtPath(cachePath, contents: data, attributes: nil)
                 }
             }
         }
