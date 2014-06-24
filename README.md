@@ -10,7 +10,7 @@ I tried some features in Swift:
 * using custom NSOperation to do simple network quque
 * using lovely and great closures to remove delegates ! It's much more elegate than block. 
 
-There are also many things need to be done, such as runloop in separate thread for NSURLConnection, using NSURLSession instead of NSURLConnection, and support gifs/png/webp format.
+There are also many things need to be done, such as runloop in separate thread for NSURLConnection, using NSURLSession instead of NSURLConnection.
 
 Forgive my poor Chinese English!
 
