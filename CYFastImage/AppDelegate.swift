@@ -3,7 +3,7 @@
 //  CYFastImage
 //
 //  Created by jason on 14-6-17.
-//  Copyright (c) 2014年 chenyang. All rights reserved.
+//  Copyright (c) 2014 chenyang. All rights reserved.
 //
 
 import UIKit
@@ -12,10 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
+    var viewController: ViewController?
+    var naviViewController: UINavigationController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        // Override point for customization after application launch.
+        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window!.makeKeyAndVisible()
+        
+        self.viewController = ViewController(nibName: nil, bundle: nil)
+        self.naviViewController = UINavigationController(rootViewController: self.viewController)
+        self.naviViewController!.wantsFullScreenLayout = true
+        self.window!.rootViewController = self.naviViewController
+        
         return true
     }
 

@@ -10,7 +10,6 @@
 		9642D7CF195488B200EDB654 /* CYImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642D7CE195488B200EDB654 /* CYImageManager.swift */; };
 		965AC14E1950609900DA04B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC14D1950609900DA04B3 /* AppDelegate.swift */; };
 		965AC1501950609900DA04B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC14F1950609900DA04B3 /* ViewController.swift */; };
-		965AC1531950609900DA04B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965AC1511950609900DA04B3 /* Main.storyboard */; };
 		965AC1551950609900DA04B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965AC1541950609900DA04B3 /* Images.xcassets */; };
 		965AC1611950609900DA04B3 /* CYFastImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC1601950609900DA04B3 /* CYFastImageTests.swift */; };
 		966422981952E449006BABE3 /* CYDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966422971952E449006BABE3 /* CYDownloadOperation.swift */; };
@@ -37,7 +36,6 @@
 		965AC14C1950609900DA04B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		965AC14D1950609900DA04B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		965AC14F1950609900DA04B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		965AC1521950609900DA04B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		965AC1541950609900DA04B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		965AC15A1950609900DA04B3 /* CYFastImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CYFastImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		965AC15F1950609900DA04B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			children = (
 				965AC14D1950609900DA04B3 /* AppDelegate.swift */,
 				965AC14F1950609900DA04B3 /* ViewController.swift */,
-				965AC1511950609900DA04B3 /* Main.storyboard */,
 				96ACABCB19507134007226BB /* CYFastImage */,
 				965AC1541950609900DA04B3 /* Images.xcassets */,
 				965AC14B1950609900DA04B3 /* Supporting Files */,
@@ -219,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96ACABCA19507075007226BB /* 125.jpg in Resources */,
-				965AC1531950609900DA04B3 /* Main.storyboard in Resources */,
 				965AC1551950609900DA04B3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,17 +262,6 @@
 			targetProxy = 965AC15B1950609900DA04B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		965AC1511950609900DA04B3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				965AC1521950609900DA04B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		965AC1621950609900DA04B3 /* Debug */ = {
