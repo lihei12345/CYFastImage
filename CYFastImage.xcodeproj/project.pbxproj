@@ -14,6 +14,7 @@
 		965AC1611950609900DA04B3 /* CYFastImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AC1601950609900DA04B3 /* CYFastImageTests.swift */; };
 		966422981952E449006BABE3 /* CYDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966422971952E449006BABE3 /* CYDownloadOperation.swift */; };
 		9664229C1952E8A7006BABE3 /* CYFastImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664229B1952E8A7006BABE3 /* CYFastImage.swift */; };
+		967F91D3195CE558008301A3 /* UIImage+FastImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F91D2195CE558008301A3 /* UIImage+FastImage.swift */; };
 		96981F3D1953361300575B8C /* CYImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96981F3C1953361300575B8C /* CYImageDownloader.swift */; };
 		96981F3F19533CA900575B8C /* CYImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96981F3E19533CA900575B8C /* CYImageCache.swift */; };
 		96ACABCA19507075007226BB /* 125.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96ACABC919507074007226BB /* 125.jpg */; };
@@ -42,6 +43,7 @@
 		965AC1601950609900DA04B3 /* CYFastImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYFastImageTests.swift; sourceTree = "<group>"; };
 		966422971952E449006BABE3 /* CYDownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYDownloadOperation.swift; sourceTree = "<group>"; };
 		9664229B1952E8A7006BABE3 /* CYFastImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYFastImage.swift; sourceTree = "<group>"; };
+		967F91D2195CE558008301A3 /* UIImage+FastImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FastImage.swift"; sourceTree = "<group>"; };
 		96981F3C1953361300575B8C /* CYImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYImageDownloader.swift; sourceTree = "<group>"; };
 		96981F3E19533CA900575B8C /* CYImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYImageCache.swift; sourceTree = "<group>"; };
 		96ACABC919507074007226BB /* 125.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 125.jpg; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				966422971952E449006BABE3 /* CYDownloadOperation.swift */,
 				96981F3C1953361300575B8C /* CYImageDownloader.swift */,
 				96981F3E19533CA900575B8C /* CYImageCache.swift */,
+				967F91D2195CE558008301A3 /* UIImage+FastImage.swift */,
 			);
 			path = CYFastImage;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				9664229C1952E8A7006BABE3 /* CYFastImage.swift in Sources */,
 				966422981952E449006BABE3 /* CYDownloadOperation.swift in Sources */,
 				96ACABCD1950715A007226BB /* UIImageView+FastImage.swift in Sources */,
+				967F91D3195CE558008301A3 /* UIImage+FastImage.swift in Sources */,
 				96981F3D1953361300575B8C /* CYImageDownloader.swift in Sources */,
 				965AC14E1950609900DA04B3 /* AppDelegate.swift in Sources */,
 			);
