@@ -21,7 +21,7 @@ extension CYFastImage {
         }
         
         convenience init() {
-            self.init(concurrentCount: 2)
+            self.init(concurrentCount: 1)
         }
         
         // MARK: public
@@ -35,7 +35,7 @@ extension CYFastImage {
         func cancel(url: String!) {
             for operation : AnyObject in operationQueue.operations {
                 if let downloadOperation =  operation as? CYDownloadOperation {
-                    if url == downloadOperation.urlString {
+                    if url == downloadOperation.urlString && downloadOperation.executing {
                         downloadOperation.cancel()
                     }
                 }

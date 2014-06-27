@@ -21,7 +21,7 @@ extension CYFastImage{
         
         init(){
             data = NSMutableData()
-            mExecuting = true
+            mExecuting = false
             mFinished = false
             
             super.init()
@@ -31,36 +31,27 @@ extension CYFastImage{
             DEBUG_LOG("deinit: \(urlString)")
         }
         
-        func done() {
-            self.executing = false
-            self.finished = true
-            self.data = nil
-            self.urlConnection = nil
-        }
-        
-        func cancenlURLConnection() {
-            urlConnection?.cancel()
-        }
-        
-        func internalCancel() {
-            if NSThread.isMainThread() {
-                self.cancenlURLConnection()
-            } else {
-                dispatch_async(dispatch_get_main_queue()){
-                    self.cancenlURLConnection()
-                }
+        // MARK: helper
+        func doneFinsh() {
+            if self.executing {
+                self.executing = false
             }
             
-            self.done()
-            super.cancel()
+            if !self.finished {
+                self.finished = true
+            }
         }
         
         // MARK: NSOperation
-        
         override func start() {
-            self.executing = true
-            
             DEBUG_LOG("start: \(urlString)")
+            
+            if self.cancelled {
+                self.finished = true;
+                return;
+            }
+            
+            self.executing = true
             
             if NSThread.isMainThread() {
                 self.main()
@@ -80,7 +71,24 @@ extension CYFastImage{
         }
         
         override func cancel() {
-            self.internalCancel()
+            DEBUG_LOG("cancel: \(urlString)")
+            
+            if self.finished {
+                return
+            }
+            
+            super.cancel()
+            if urlConnection {
+                urlConnection?.cancel()
+                self.urlConnection = nil
+            }
+            
+            self.doneFinsh()
+            
+            if let callback = self.finishCallback {
+                callback(data: nil, urlString: urlString)
+                self.data = nil
+            }
         }
         
         override var executing: Bool {
@@ -88,7 +96,9 @@ extension CYFastImage{
             return mExecuting
         }
         set{
+            self.willChangeValueForKey("isExecuting")
             mExecuting = newValue
+            self.didChangeValueForKey("isExecuting")
         }
         }
         
@@ -118,23 +128,23 @@ extension CYFastImage{
         }
         
         func connectionDidFinishLoading(connection: NSURLConnection!) {
+            self.urlConnection = nil
+            self.doneFinsh()
+            
             if let callback = self.finishCallback {
                 callback(data: data, urlString: urlString)
+                self.data = nil
             }
-            
-            self.done()
-            
-            DEBUG_LOG("success: \(urlString)")
         }
         
         func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
+            self.urlConnection = nil
+            self.doneFinsh()
+            
             if let callback = self.finishCallback {
                 callback(data: nil, urlString: urlString)
+                self.data = nil
             }
-            
-            self.done()
-            
-            DEBUG_LOG("fail: \(urlString)")
         }
     }
 }
