@@ -12,10 +12,6 @@ I tried some features in Swift:
 
 There are also many things need to be done, such as runloop in separate thread for NSURLConnection, using NSURLSession instead of NSURLConnection.
 
-Forgive my poor Chinese English!
-
-And CY is short for my wife's name!
-
 Example
 ========
 Just like this:
