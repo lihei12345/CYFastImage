@@ -1,3 +1,6 @@
+DEPRECATED
+==========
+
 CYFastImage
 ===========
 
